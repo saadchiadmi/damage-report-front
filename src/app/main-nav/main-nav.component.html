@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><span><img class="img-fluid img-thumbnail logo-menu" src="assets/eurogate.svg" alt=""></span></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" (click)="isScreenSmall() && drawer.close()"><mat-icon class="icon">home</mat-icon>Dashboard</a>
+      <a mat-list-item routerLink="/reporting-archive"><mat-icon class="icon">description</mat-icon> Reporting Archive</a>
+      <a mat-list-item href="#"><mat-icon class="icon">archive</mat-icon> Damage Archive</a>
+      <a mat-list-item href="#"><mat-icon class="icon">assessment</mat-icon> KPI</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span *ngIf="!drawer.opened"><img class="img-fluid img-thumbnail logo-menu" src="assets/eurogate.svg" alt=""></span>
+      <span class="example-spacer"></span>
+      <span style="color: #004494;">Loris</span>
+      <button mat-icon-button class="example-icon text-danger" aria-label="Icon-button with share icon">
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

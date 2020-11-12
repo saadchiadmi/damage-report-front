@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="row padding-bottom">
+                <div class="col-2">
+                    <button style="height: 100%;" mat-button class="btn btn-danger"><mat-icon>add_circle_outline</mat-icon> New report</button>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 padding-bottom">
+                            <p-dropdown class="padding-right" [options]="cities" optionLabel="name" placeholder="Select a status"></p-dropdown>
+                            <p-dropdown class="padding-right" [options]="cities" optionLabel="name" placeholder="Taken over by"></p-dropdown>
+                            <p-dropdown class="padding-right" [options]="cities" optionLabel="name" placeholder="Technical office"></p-dropdown>
+                            <p-dropdown class="padding-right" [options]="cities" optionLabel="name" placeholder="Compited by"></p-dropdown>
+                        </div>
+                        <div class="col-12">
+                            <p-dropdown class="padding-right" [options]="cities" optionLabel="name" placeholder="Select a status"></p-dropdown>
+                            <p-dropdown class="padding-right" [options]="cities" optionLabel="name" placeholder="Taken over by"></p-dropdown>
+                            <button style="margin-right: 15px;" mat-button class="btn btn-success"><mat-icon>search</mat-icon> Apply filter</button>
+                            <button mat-button class="btn btn-info"><mat-icon>healing</mat-icon> Reset filter</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="padding-bottom">
+                <p-table #table [value]="[{}]">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Status</th>
+                            <th>Posted by</th>
+                            <th>Technical office</th>
+                            <th>Damage</th>
+                            <th>Certify reserve</th>
+                            <th>Damage goods</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body">
+                        <tr>
+                            <td>Draft</td>
+                            <td>user 2</td>
+                            <td>technical 2</td>
+                            <td>Damage 2</td>
+                            <td>Certify 2</td>
+                            <td>Damage good 2</td>
+                        </tr>
+                        <tr>
+                            <td>Validation Tech</td>
+                            <td>user 3</td>
+                            <td>technical 3</td>
+                            <td>Damage 3</td>
+                            <td>Certify 3</td>
+                            <td>Damage good 3</td>
+                        </tr>
+                        <tr>
+                            <td>Validation SM</td>
+                            <td>user 4</td>
+                            <td>technical 4</td>
+                            <td>Damage 4</td>
+                            <td>Certify 4</td>
+                            <td>Damage good 4</td>
+                        </tr>
+                        <tr>
+                            <td>Validation CDR</td>
+                            <td>user 5</td>
+                            <td>technical 5</td>
+                            <td>Damage 5</td>
+                            <td>Certify 5</td>
+                            <td>Damage good 5</td>
+                        </tr>
+                        <tr>
+                            <td>Damage</td>
+                            <td>user 6</td>
+                            <td>technical 6</td>
+                            <td>Damage 6</td>
+                            <td>Certify 6</td>
+                            <td>Damage good 6</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>
